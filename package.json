@@ -30,5 +30,6 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.5"
   },
-  "files": ["lib/**/*"]
+  "files": ["lib/**/*"],
+  "keywords": ["authentication", "thomasio-auth"]
 }
