@@ -12,3 +12,8 @@ export type UserAuthenticator<T> = (
 ) => { valid: false } | { valid: true; session: ISession<T> };
 
 export type PasswordVerifier<T> = (stored: T, input: string) => Promise<boolean>;
+
+export interface IDatabaseInterface<T, U> {
+	userAuthenticator: UserAuthenticator<T>;
+	sessionAuthenticator: SessionAuthenticator<U>;
+}
