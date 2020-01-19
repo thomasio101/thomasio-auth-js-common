@@ -1,6 +1,6 @@
 {
   "name": "thomasio-auth-js-common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -31,6 +31,11 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.5"
   },
-  "files": ["lib/**/*"],
-  "keywords": ["authentication", "thomasio-auth"]
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "authentication",
+    "thomasio-auth"
+  ]
 }
