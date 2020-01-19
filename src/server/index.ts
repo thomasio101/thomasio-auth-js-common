@@ -13,7 +13,7 @@ export type UserAuthenticator<T> = (
 
 export type PasswordVerifier<T> = (stored: T, input: string) => Promise<boolean>;
 
-export interface IDatabaseInterface<T, U> {
+export interface IDatabaseInterface<T> {
 	userAuthenticator: UserAuthenticator<T>;
-	sessionAuthenticator: SessionAuthenticator<U>;
+	sessionAuthenticator: SessionAuthenticator<T>;
 }
