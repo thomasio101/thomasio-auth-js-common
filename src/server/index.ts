@@ -11,10 +11,10 @@ export type UserAuthenticator<T> = (
 	password: string,
 ) => Promise<{ valid: false } | { valid: true; session: ISession<T> }>;
 
-export type UserCreator<E, T> = (
+export type UserCreator<E, I> = (
 	username: string,
 	password: string,
-) => Promise<{ success: true; identity: T } | { success: false; error: E }>;
+) => Promise<{ success: true; identity: I } | { success: false; error: E }>;
 
 export type Verifier<T> = (stored: T, input: string) => Promise<boolean>;
 
