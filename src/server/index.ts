@@ -11,7 +11,7 @@ export type UserAuthenticator<T> = (
 	password: string,
 ) => Promise<{ valid: false } | { valid: true; session: ISession<T> }>;
 
-export type UserCreator<E, I> = (
+export type UserCreator<E, I, U> = (
 	username: string,
 	password: string,
 	userData: U,
