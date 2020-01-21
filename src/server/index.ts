@@ -14,7 +14,7 @@ export type UserAuthenticator<T> = (
 export type UserCreator<E, T> = (
 	username: string,
 	password: string,
-) => Promise<{ success: true, identity: T } | { success: false; error: E }>;
+) => Promise<{ success: true; identity: T } | { success: false; error: E }>;
 
 export type Verifier<T> = (stored: T, input: string) => Promise<boolean>;
 
