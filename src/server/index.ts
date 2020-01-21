@@ -11,11 +11,18 @@ export type UserAuthenticator<T> = (
 	password: string,
 ) => Promise<{ valid: false } | { valid: true; session: ISession<T> }>;
 
+export type UserCreator<E, T> = (
+	username: string,
+	password: string,
+) => Promise<{ success: true, identity: T } | { success: false; error: E }>;
+
 export type Verifier<T> = (stored: T, input: string) => Promise<boolean>;
 
 export type Processor<T> = (input: string) => Promise<T>;
 
-export interface IDatabaseInterface<T> {
+// TODO: Move userCreator into child interface for read-only database interfaces.
+export interface IDatabaseInterface<T, E> {
 	userAuthenticator: UserAuthenticator<T>;
 	sessionAuthenticator: SessionAuthenticator<T>;
+	userCreator: UserCreator<E, T>;
 }
