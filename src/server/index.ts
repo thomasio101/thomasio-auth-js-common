@@ -21,8 +21,8 @@ export type Verifier<T> = (stored: T, input: string) => Promise<boolean>;
 export type Processor<T> = (input: string) => Promise<T>;
 
 // TODO: Move userCreator into child interface for read-only database interfaces.
-export interface IDatabaseInterface<T, E> {
-	userAuthenticator: UserAuthenticator<T>;
-	sessionAuthenticator: SessionAuthenticator<T>;
-	userCreator: UserCreator<E, T>;
+export interface IDatabaseInterface<E, I> {
+	userAuthenticator: UserAuthenticator<I>;
+	sessionAuthenticator: SessionAuthenticator<I>;
+	userCreator: UserCreator<E, I>;
 }
